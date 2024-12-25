@@ -39,5 +39,7 @@ html,body{
     padding: 20px 50px;
     font-size: 20px;
     background-color: #9FE4DE;
+    border: none;
+    border-radius: 10px;
     
 }

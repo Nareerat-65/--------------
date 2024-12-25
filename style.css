@@ -5,7 +5,7 @@ html,body{
 
 .nav {
     background-color: #1F2B6C;
-    padding: 25px;
+    padding: 15px;
     text-align: center;
 }
 
@@ -26,7 +26,7 @@ form .car-info {
     display: flex;
     justify-content: center;
     gap: 100px;
-    padding: 20px;
+    padding: 10px;
 }
 
 form h3 {
@@ -80,6 +80,8 @@ form select {
     background-color: #9FE4DE;
     width: 75px;
     height: 40px;
+    border: none;
+    border-radius: 10px;
 
 }
 
