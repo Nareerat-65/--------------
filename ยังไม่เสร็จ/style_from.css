@@ -1,0 +1,110 @@
+html,body{
+    margin: 0;
+    padding: 0;
+}
+.nav {
+    background-color: #1F2B6C;
+    padding: 25px;
+    text-align: center;
+}
+
+.nav a {
+    color: white;
+    padding: 0 15px;
+    text-decoration: none;
+}
+
+.header {
+    background-color: #8BBAD4;
+    padding: 10px;
+    text-align: center;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+
+.form-container {
+    padding: 50px;
+}
+
+.form-title {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.form-row1 {
+    display: flex;
+    gap: 200px;
+    margin-bottom: 30px;
+}
+
+.form-row2 {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.form-group {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.form-group:last-child {
+    margin-right: 50px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.button-row {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.button-row button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.save-button {
+    background-color: #66ccbe;
+    color: white;
+    margin-right: 10px;
+}
+
+.save-button:hover {
+    background-color: #55b2a5;
+}
+
+.cancel-button {
+    background-color: #f8b6b6;
+    color: #d32f2f;
+}
+
+.cancel-button:hover {
+    background-color: #e89b9b;
+}
+
+.section {
+    background-color: #d9eaf7;
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}

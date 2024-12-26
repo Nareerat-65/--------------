@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style_from.css">
+    <title>รายละเอียดการแจ้งซ่อม</title>
+</head>
+<body>
+    <div class="nav">
+        <a href="car_report.html">รายงานสภาพรถ</a>
+        <a class="active">แจ้งซ่อม</a>
+        <a href="">จัดการตารางเวลารถพยาบาล</a>
+    </div>
+    <div class="header">
+        <h1 class="title">รายงานสภาพรถ</h1>
+    </div>
+
+    <div class="container">
+        <div class="form-container">
+            <div class="form-title">รายละเอียดการแจ้งซ่อม</div>
+
+            <div class="section">
+                <div class="form-row1">
+                    <div class="form-group">
+                        <label for="date">วันที่</label>
+                        <input type="text" id="date" value="วันที่ 2 มกราคม 2024" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="license">ทะเบียนรถ</label>
+                        <input type="text" id="license" value="กข1234" readonly>
+                    </div>
+                </div>
+
+                <div class="form-row2">
+                    <div class="form-group">
+                        <label for="category">อุปกรณ์ / อะไหล่</label>
+                        <select id="category">
+                            <option>ระบุประเภท</option>
+                            <option>เครื่องยนต์</option>
+                            <option>เครื่องปรับอากาศ</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="device">รายละเอียด</label>
+                        <select id="device">
+                            <option>ระบุอุปกรณ์</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="reason">สาเหตุ</label>
+                        <select id="reason">
+                            <option>เลือกสาเหตุ</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="note">หมายเหตุ</label>
+                        <input type="text" id="note">
+                    </div>
+                </div>
+            </div>
+
+            <div class="button-row">
+                <button class="save-button">บันทึก</button>
+                <button class="cancel-button">ยกเลิก</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('.save-button').addEventListener('click', function() {
+            const date = document.getElementById('date').value;
+            const license = document.getElementById('license').value;
+            const category = document.getElementById('category').value;
+            const device = document.getElementById('device').value;
+            const reason = document.getElementById('reason').value;
+            const note = document.getElementById('note').value;
+
+            const repairData = {
+                date,
+                license,
+                category,
+                device,
+                reason,
+                note
+            };
+
+            let repairs = JSON.parse(localStorage.getItem('repairs')) || [];
+            repairs.push(repairData);
+            localStorage.setItem('repairs', JSON.stringify(repairs));
+
+            window.location.href = 'page_repair.html';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style_repair.css">
+    <title>แจ้งซ่อม</title>
+</head>
+<body>
+    <div class="nav">
+        <a href="">รายงานสภาพรถ</a>
+        <a class="active">แจ้งซ่อม</a>
+        <a href="">จัดการตารางเวลารถพยาบาล</a>
+    </div>
+    <div class="header">
+        <h1 class="title">รายงานสภาพรถ</h1>
+    </div>
+
+    <div>
+        <div class="table-container">
+            <div class="add-button">
+                <button>เพิ่มการแจ้งซ่อม +</button>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>วันที่แจ้งซ่อม</th>
+                        <th>ทะเบียนรถ</th>
+                        <th>อุปกรณ์/อุปกรณ์</th>
+                        <th>สาเหตุ</th>
+                        <th>ผู้รายงาน</th>
+                        <th>สถานะการซ่อม</th>
+                    </tr>
+                </thead>
+                <tbody id="repair-table-body">
+                    <!-- Table rows go here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="./script_repair.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const repairTableBody = document.getElementById('repair-table-body');
+            const repairs = JSON.parse(localStorage.getItem('repairs')) || [];
+
+            repairs.forEach(repair => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${repair.date}</td>
+                    <td>${repair.license}</td>
+                    <td>${repair.category}</td>
+                    <td>${repair.device}</td>
+                    <td>${repair.reason}</td>
+                    <td><button class="status-button">แจ้งซ่อม</button></td>
+                `;
+                repairTableBody.appendChild(row);
+            });
+
+            // Re-apply the event listeners for the status buttons
+            const statusButtons = document.querySelectorAll('.status-button');
+            statusButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    button.textContent = 'แจ้งซ่อมแล้ว';
+                    button.style.backgroundColor = '#A8E5B1';
+                    button.disabled = true;
+                });
+            });
+        });
+    </script>
+</body>
+</html>
